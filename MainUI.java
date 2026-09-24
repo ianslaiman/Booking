@@ -5,7 +5,7 @@ class MainUIManager{
      
        public static MainUIManager getInstance(){
 	       if (instance == null){
-		       instance == new MainUIManager(); 
+		       instance = new MainUIManager(); 
 	       }
 	       return instance;
        }
@@ -22,14 +22,14 @@ class MainUIManager{
 class SelectionChoice {
 	public void display() {
 		MainUIManager manager = MainUIManager.getInstance();
-		System.out.println("Current Option Selected: " + manager.getOption();
+		System.out.println("Current Option Selected: " + manager.getOption());
 	}
 }
 
 public class MainUI{
 	public static void main(String[] args)
 	{
-		MainUIManager manager = MainUI.getINstance();
+		MainUIManager manager = MainUIManager.getInstance();
 		
 		new SelectionChoice().display();
 	}
