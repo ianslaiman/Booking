@@ -66,6 +66,7 @@ public class UILayout {
     public static void main(String[] args) {
         new ScreenHome().display();
         new ScreenSettings().display();
+        System.out.println();
         UILayout UI = UILayout.getInstance();
         UI.setLanguage("SP");
         UI.setFontSize(16);
