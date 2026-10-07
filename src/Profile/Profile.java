@@ -10,6 +10,7 @@ public class Profile {
     private String gender;
     private String nationality;
     private String passportNumber;
+    private int points;
 
     private Profile() {
     }
@@ -46,6 +47,9 @@ public class Profile {
     public String getPassportNumber() {
         return passportNumber;
     }
+    public int getPoints() {
+        return points;
+    }
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -70,7 +74,9 @@ public class Profile {
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
-    
+    public void setPoints(int points) {
+        this.points = points;
+    }
     @Override 
     public String toString() {
         return "Profile{" +
@@ -82,6 +88,7 @@ public class Profile {
                 ", gender='" + gender + '\'' +
                 ", nationality='" + nationality + '\'' +
                 ", passportNumber='" + passportNumber + '\'' +
+                ", points=" + points + '\'' +
                 '}';
     }
 }

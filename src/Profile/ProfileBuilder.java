@@ -30,6 +30,9 @@ public class ProfileBuilder {
     public void setPassportNumber() {
         profile.setPassportNumber("123456789");
     }
+    public void setPoints() {
+        profile.setPoints(0);
+    }
     public Profile getProfile() {
         return profile;
     }
