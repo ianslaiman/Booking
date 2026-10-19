@@ -1,26 +1,29 @@
 package UI_Format;
 
+import Facade.BookingFacade;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("=== INITIAL CONFIGURATION ===");
-        new UILayout.ScreenHome().display();
+        // --- STEP 1: UI INITIALIZATION ---
+        System.out.println("=== INITIALIZING UI LAYOUT & FORMS ===");
+        UILayout.ScreenHome homeScreen = new UILayout.ScreenHome();
+        homeScreen.display();
 
-        System.out.println("\n=== RENDERING FORMS ===");
         MobileForm mobileForm = new MobileForm();
         mobileForm.display();
 
         DesktopForm desktopForm = new DesktopForm();
         desktopForm.display();
 
-        System.out.println("\n=== UPDATING GLOBAL LAYOUT ===");
-        UILayout ui = UILayout.getInstance();
-        ui.setLanguage("ES");
-        ui.setFontSize(14);
-        ui.setTextColor("#FFFFFF");
+        System.out.println();
 
-        System.out.println("\n=== RE-RENDERING FORMS WITH NEW SETTINGS ===");
-        mobileForm.display();
-        desktopForm.display();
-        
+        // --- STEP 2: IMPLEMENTING BOOKINGS WITH FACADE ---
+        BookingFacade bookingFacade = new BookingFacade();
+
+        // Book a Transport ticket
+        bookingFacade.processBooking("Transport");
+
+        // Book a Hotel ticket
+        bookingFacade.processBooking("Hotel");
     }
 }
