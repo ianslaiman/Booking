@@ -6,7 +6,7 @@ import TicketPrices.*;
 
 public class BookingFacade {
 
-    // 1. Profile Subsystem Integration
+    // Profile Integration
     public Profile setupUserProfile() {
         System.out.println("[Subsystem: Profile] Initializing user profile...");
         ProfileBuilder profileBuilder = new ProfileBuilder();
@@ -24,7 +24,7 @@ public class BookingFacade {
         return profile;
     }
 
-    // 2. Ticket Subsystem Integration
+    // Ticket Integration
     public Ticket createBookingTicket(String ticketCategory) {
         System.out.println("[Subsystem: TicketFolder] Generating ticket...");
         TicketFactory ticketFactory;
@@ -40,7 +40,7 @@ public class BookingFacade {
         return ticket;
     }
 
-    // 3. TicketPrices Subsystem Integration (Builder + Director)
+    // 3. TicketPrices Integration (Builder + Director)
     public TicketClasses calculatePricing() {
         System.out.println("[Subsystem: TicketPrices] Building price and bonus structure...");
         TicketClassesBuilder builder = new TravellingBonusesBuilder();
