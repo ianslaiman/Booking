@@ -1,3 +1,5 @@
+package UI_Format;
+
 public class UILayout {
     private static UILayout instance;
     // General UI
@@ -14,7 +16,7 @@ public class UILayout {
         this.TextColor = "#000000";
     }
 
-    private static UILayout getInstance(){
+    public static UILayout getInstance(){
         if (instance == null) {
             instance = new UILayout();
         }
@@ -22,30 +24,30 @@ public class UILayout {
     }
 
     // Getters
-    private String getBackgroundColor(){
+    public String getBackgroundColor(){
         return BackgroundColor;
     }
-    private String getLanguage(){
+    public String getLanguage(){
         return language;
     }
-    private  Integer getFontSize(){
+    public  Integer getFontSize(){
         return FontSize;
     }
-    private  String getTextColor(){
+    public  String getTextColor(){
         return TextColor;
     }
 
     // Setters
-    private void setBackgroundColor(String BackgroundColor){
+    public void setBackgroundColor(String BackgroundColor){
         this.BackgroundColor = BackgroundColor;
     }
-    private void setLanguage(String language){
+    public void setLanguage(String language){
         this.language = language;
     }
-    private void setFontSize(int FontSize){
+    public void setFontSize(int FontSize){
         this.FontSize = FontSize;
     }
-    private void setTextColor(String TextColor){
+    public void setTextColor(String TextColor){
         this.TextColor = TextColor;
     }
 
