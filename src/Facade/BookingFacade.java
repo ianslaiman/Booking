@@ -6,24 +6,6 @@ import TicketPrices.*;
 
 public class BookingFacade {
 
-    // Profile Integration
-    public Profile setupUserProfile() {
-        System.out.println("[Subsystem: Profile] Initializing user profile...");
-        ProfileBuilder profileBuilder = new ProfileBuilder();
-        profileBuilder.setFullName();
-        profileBuilder.setEmail();
-        profileBuilder.setPhoneNumber();
-        profileBuilder.setAddress();
-        profileBuilder.setDateOfBirth();
-        profileBuilder.setGender();
-        profileBuilder.setNationality();
-        profileBuilder.setPassportNumber();
-
-        Profile profile = profileBuilder.getProfile();
-        System.out.println("   -> Profile created for: " + profile.getFullName() + " (" + profile.getEmail() + ")");
-        return profile;
-    }
-
     // Ticket Integration
     public Ticket createBookingTicket(String ticketCategory) {
         System.out.println("[Subsystem: TicketFolder] Generating ticket...");
@@ -55,12 +37,11 @@ public class BookingFacade {
     }
 
     // Facade Operation
-    public void processBooking(String ticketCategory) {
+    public void processBooking(Profile profile,String ticketCategory) {
         System.out.println("==========================================");
         System.out.println("       STARTING BOOKING PROCESS           ");
         System.out.println("==========================================");
 
-        Profile profile = setupUserProfile();
         Ticket ticket = createBookingTicket(ticketCategory);
         TicketClasses prices = calculatePricing();
 
