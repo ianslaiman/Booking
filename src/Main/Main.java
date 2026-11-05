@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Main {
 
     public static boolean displayMenu(Profile profile) {
-        System.out.println("Welcome to the Booking System!");
+        System.out.println("\nWelcome to the Booking System!");
         System.out.println("Please select an option:");
         System.out.println("1. Book a Transport Ticket");
         System.out.println("2. Book a Hotel Ticket");
@@ -40,9 +40,10 @@ public class Main {
         }
         return true;
     }
+
     public static void main(String[] args) {
 
-        // Setup
+        // Setup Profile
         ProfileBuilder profileBuilder = new ProfileBuilder();
         profileBuilder.setFullName();
         profileBuilder.setEmail();
@@ -53,21 +54,20 @@ public class Main {
         profileBuilder.setNationality();
         profileBuilder.setPassportNumber();
 
-        System.out.println("=== INITIALIZING UI LAYOUT & FORMS ===");
+        Profile myProfile = Profile.getProfile();
 
+        // --- MEDIATOR PATTERN SETUP ---
+        BookingCoordinator coordinator = new BookingCoordinator(myProfile);
+        myProfile.setMediator(coordinator);
+
+        // Test the mediator by changing nationality
+        myProfile.setNationality("Spanish");
+
+        System.out.println("=== INITIALIZING UI LAYOUT & FORMS ===");
         UILayout.ScreenHome homeScreen = new UILayout.ScreenHome();
         homeScreen.display();
 
-       // MobileForm mobileForm = new MobileForm();
-       // mobileForm.display();
-
-       // DesktopForm desktopForm = new DesktopForm();
-       // desktopForm.display();
-
-        Profile myProfile = Profile.getProfile();
-
         // Loop
-
         while (true) {
             Boolean keepRunning = displayMenu(myProfile);
             if (!keepRunning) {
@@ -75,5 +75,4 @@ public class Main {
             }
         }
     }
-
 }
