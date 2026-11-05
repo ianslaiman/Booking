@@ -3,6 +3,7 @@ package Facade;
 import Profile.*;
 import TicketFolder.*;
 import TicketPrices.*;
+import Booking.*;
 
 public class BookingFacade {
 
@@ -37,13 +38,29 @@ public class BookingFacade {
     }
 
     // Facade Operation
-    public void processBooking(Profile profile,String ticketCategory) {
+    public void processBooking(Profile profile, String ticketCategory) {
         System.out.println("==========================================");
         System.out.println("       STARTING BOOKING PROCESS           ");
         System.out.println("==========================================");
 
         Ticket ticket = createBookingTicket(ticketCategory);
         TicketClasses prices = calculatePricing();
+
+        // --- NEW: STATE & TEMPLATE PATTERN INTEGRATION ---
+        Booking booking;
+        if ("Transport".equalsIgnoreCase(ticketCategory)) {
+            booking = new TransportBooking(profile, ticket);
+        } else {
+            booking = new HotelBooking(profile, ticket);
+        }
+
+        System.out.println("\n--- DEMONSTRATING STATE PATTERN ---");
+        System.out.println("-> Booking created. Current state: " + booking.getState().getStatusName());
+        booking.advanceState(); // Transitions to PAID
+        booking.advanceState(); // Transitions to COMPLETED
+
+        System.out.println("\n--- EXECUTING TEMPLATE METHOD ---");
+        booking.confirmBooking();
 
         System.out.println("------------------------------------------");
         System.out.println("SUCCESS: Booking complete for " + profile.getFullName());
