@@ -1,13 +1,16 @@
 package Booking;
-import TicketFolder.*;
-import Profile.*;
+
+import Profile.Profile;
+import TicketFolder.Ticket;
 
 public class TransportBooking extends Booking {
-    private Ticket ticket;
-    private Profile profile;
 
-    public TransportBooking(Ticket ticket) {
-        this.ticket = ticket;
-        this.profile = Profile.getProfile();
+    public TransportBooking(Profile profile, Ticket ticket) {
+        super(profile, ticket);
+    }
+
+    @Override
+    protected void assignSpecificDetails() {
+        System.out.println("[TransportBooking] Assigning Seat 12A | Boarding Gate B4 | Priority Boarding enabled.");
     }
 }
