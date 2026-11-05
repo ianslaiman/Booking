@@ -1,6 +1,7 @@
 package UI_Format;
 
 import Facade.BookingFacade;
+import Profile.Profile;
 
 public class App {
     public static void main(String[] args) {
@@ -20,10 +21,14 @@ public class App {
         // --- STEP 2: IMPLEMENTING BOOKINGS WITH FACADE ---
         BookingFacade bookingFacade = new BookingFacade();
 
+        // Retrieve and configure the Profile singleton
+        Profile userProfile = Profile.getProfile();
+        userProfile.setFullName("John Doe");
+
         // Book a Transport ticket
-        bookingFacade.processBooking("Transport");
+        bookingFacade.processBooking(userProfile, "Transport");
 
         // Book a Hotel ticket
-        bookingFacade.processBooking("Hotel");
+        bookingFacade.processBooking(userProfile, "Hotel");
     }
 }
