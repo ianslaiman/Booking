@@ -8,32 +8,41 @@ public class TransportTicketBuilder implements TicketBuilder {
         this.ticket = new TransportTicket();
     }
 
-    public void buildTicketIdentifier() {
+    @Override
+    public void buildTicketIdentifier(int Identifier) {
         ticket.setTicketIdentifier(0);
     }
-    public void buildTicketPrice() {
-        ticket.setTicketPrice(0);
+    @Override
+    public void buildTicketPrice(int Price) {
+        ticket.setTicketPrice(Price);
     }
-    public void buildTicketBrand() {
-        ticket.setTicketBrand("");
+    @Override
+    public void buildTicketBrand(String Brand) {
+        ticket.setTicketBrand(Brand);
     }
-    public void buildTicketDate() {
-        ticket.setTicketDate("");
+    @Override
+    public void buildTicketDate(String Date) {
+        ticket.setTicketDate(Date);
     }
-    public void buildTicketType() {
-        ticket.setTicketType("");
+    @Override
+    public void buildTicketType(String Type) {
+        ticket.setTicketType(Type);
     }
-    public void buildTicketDestination() {
+    @Override
+    public void buildTicketDestination(String Destination) {
         ticket.setTicketDestintation("");
     }
-    public void buildTicketOrigin() {
+    @Override
+    public void buildTicketOrigin(String Origin) {
         ticket.setTicketOrigin("");
     }
-    public void buildTicketDocumentRequired() {
-        ticket.setTicketDocumentRequired("");
+    @Override
+    public void buildTicketDocumentRequired(String Document) {
+        ticket.setTicketDocumentRequired(Document);
     }
-    public void buildCreditCard() {
-        ticket.setCreditCard(0);
+    @Override
+    public void buildCreditCard(int Card) {
+        ticket.setCreditCard(Card);
     }
     public Ticket getTicket() {
         return ticket;

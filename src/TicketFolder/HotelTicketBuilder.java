@@ -7,33 +7,43 @@ public class HotelTicketBuilder implements TicketBuilder {
         this.ticket = new HotelTicket();
     }
 
-    public void buildTicketIdentifier() {
-        ticket.setTicketIdentifier(0);
+    @Override
+    public void buildTicketIdentifier(int Identifer) {
+        ticket.setTicketIdentifier(Identifer);
     }
-    public void buildTicketPrice() {
-        ticket.setTicketPrice(0);
+    @Override    
+    public void buildTicketPrice(int Price) {
+        ticket.setTicketPrice(Price);
     }
-    public void buildTicketBrand() {
-        ticket.setTicketBrand("");
+    @Override 
+    public void buildTicketBrand(String Brand) {
+        ticket.setTicketBrand(Brand);
     }
-    public void buildTicketDate() {
-        ticket.setTicketDate("");
+    @Override 
+    public void buildTicketDate(String Date) {
+        ticket.setTicketDate(Date);
     }
-    public void buildTicketType() {
-        ticket.setTicketType("");
+    @Override 
+    public void buildTicketType(String Type) {
+        ticket.setTicketType(Type);
     }
-    public void buildTicketDestination() {
-        ticket.setTicketDestintation("");
+    @Override 
+    public void buildTicketDestination(String destination) {
+        ticket.setTicketDestintation(destination);
     }
-    public void buildTicketOrigin() {
-        ticket.setTicketOrigin("");
+    @Override 
+    public void buildTicketOrigin(String Origin) {
+        ticket.setTicketOrigin(Origin);
     }
-    public void buildTicketDocumentRequired() {
-        ticket.setTicketDocumentRequired("");
+    @Override 
+    public void buildTicketDocumentRequired(String document) {
+        ticket.setTicketDocumentRequired(document);
     }
-    public void CreditCard(){
-        ticket.setCreditCard(0);
+    @Override 
+    public void buildCreditCard(int card){
+        ticket.setCreditCard(card);
     }
+    @Override 
     public Ticket getTicket() {
         return ticket;
     }

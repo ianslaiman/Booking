@@ -8,11 +8,11 @@ public class Breakfast extends BookingDecorator {
 
     @Override
     public double getPrice() {
-        return booking.getPrice() + 40;
+        return booking.getPrice() + 50;
     }
 
     @Override
     public String getDescription() {
-        return booking.getDescription() + " + Extra breakfast";
+        return booking.getDescription() + " + Extra breakfast per person";
     }
 }

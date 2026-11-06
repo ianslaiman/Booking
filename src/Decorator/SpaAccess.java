@@ -7,11 +7,11 @@ public class SpaAccess extends BookingDecorator {
     }
 
     public double getPrice() {
-        return booking.getPrice() + 40;
+        return booking.getPrice() + 30;
     }
 
     public String getDescription() {
-        return booking.getDescription() + " + Spa Acess";
+        return booking.getDescription() + " + Spa Acess per person";
     }
 }
 
