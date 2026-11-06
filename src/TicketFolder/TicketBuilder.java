@@ -9,5 +9,6 @@ public interface TicketBuilder {
     void buildTicketDestination();
     void buildTicketOrigin();
     void buildTicketDocumentRequired();
+    void buildCreditCard();
     Ticket getTicket();
 }

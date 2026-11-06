@@ -46,7 +46,7 @@ public class TravellingBonusesBuilder implements TicketClassesBuilder{
     @Override
     public void buildOverBaggingPenalty()
     {
-        ticketclasses.setOverBaggingPenaltyPercent(10);
+        ticketclasses.setOverBaggingPenaltyPercent(-10);
     }
 
     @Override

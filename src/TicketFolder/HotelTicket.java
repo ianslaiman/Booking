@@ -8,6 +8,7 @@ public class HotelTicket extends Ticket {
     private String TicketDestination;
     private String TicketOrigin;
     private String TicketDocumentRequired;
+    private int CreditCard;
 
     public int getTicketIdentifier() {
         return TicketIdentifier;
@@ -33,6 +34,9 @@ public class HotelTicket extends Ticket {
     public String getTicketDocumentRequired() {
         return TicketDocumentRequired;
     }
+    public int getCreditCard(){
+        return CreditCard;
+    }
     public void setTicketIdentifier(int TicketIdentifier) {
         this.TicketIdentifier = TicketIdentifier;
     }
@@ -56,6 +60,9 @@ public class HotelTicket extends Ticket {
     }
     public void setTicketDocumentRequired(String TicketDocumentRequired) {
         this.TicketDocumentRequired = TicketDocumentRequired;
+    }
+    public void setCreditCard(int CreditCard) {
+        this.CreditCard = CreditCard;
     }
 
     @Override 

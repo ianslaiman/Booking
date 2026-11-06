@@ -32,6 +32,9 @@ public class TransportTicketBuilder implements TicketBuilder {
     public void buildTicketDocumentRequired() {
         ticket.setTicketDocumentRequired("");
     }
+    public void buildCreditCard() {
+        ticket.setCreditCard(0);
+    }
     public Ticket getTicket() {
         return ticket;
     }

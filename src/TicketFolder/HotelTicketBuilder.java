@@ -31,6 +31,9 @@ public class HotelTicketBuilder implements TicketBuilder {
     public void buildTicketDocumentRequired() {
         ticket.setTicketDocumentRequired("");
     }
+    public void CreditCard(){
+        ticket.setCreditCard(0);
+    }
     public Ticket getTicket() {
         return ticket;
     }
