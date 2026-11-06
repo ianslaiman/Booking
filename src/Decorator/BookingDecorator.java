@@ -1,9 +1,9 @@
 package Decorator;
 
-public class BookingDecorator implements Booking{
-    protected Booking booking;
+public abstract class BookingDecorator implements BookingInter{
+    protected BookingInter booking;
 
-    public BookingDectorator(Booking booking) 
+    public BookingDecorator(BookingInter booking) 
     {
         this.booking = booking;
     }

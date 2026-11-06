@@ -1,9 +1,8 @@
 package Decorator;
 
-public class RentACar {
-    public class RentACar extends BookingDecorator {
+public class RentACar extends BookingDecorator {
 
-    public RentACar(Booking booking) {
+    public RentACar(BookingInter booking) {
         super(booking);
     }
 
@@ -15,4 +14,4 @@ public class RentACar {
         return booking.getDescription() + " + A car available at the landing airport";
     }
 }
-}
+

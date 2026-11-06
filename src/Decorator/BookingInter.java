@@ -1,6 +1,6 @@
 package Decorator;
 
-public interface Booking {
+public interface BookingInter {
     double getPrice();
     String getDescription();
 }

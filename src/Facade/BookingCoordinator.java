@@ -1,13 +1,13 @@
 package Facade;
 
-import Profile.Profile;
+import Profile.ProfilePrimary;
 import UI_Format.UILayout;
 
 public class BookingCoordinator implements BookingMediator {
-    private Profile profile;
+    private ProfilePrimary profile;
 
     // This is the constructor Main.java is looking for:
-    public BookingCoordinator(Profile profile) {
+    public BookingCoordinator(ProfilePrimary profile) {
         this.profile = profile;
     }
 

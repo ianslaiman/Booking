@@ -1,12 +1,15 @@
 package Decorator;
 
-public class HotelBooking implements Booking{
+public class HotelBookingDec implements BookingInter{
+
+    @Override
     public double getPrice()
     {
         return 250;
     }
 
-    public String getInfo()
+    @Override
+    public String getDescription()
     {
         return "Basic Hotel";
     }

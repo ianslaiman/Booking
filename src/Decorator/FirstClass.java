@@ -1,9 +1,8 @@
 package Decorator;
 
-public class FirstClass {
-    public class FirstClass extends BookingDecorator {
+public class FirstClass extends BookingDecorator {
 
-    public FirstClass(Booking booking) {
+    public FirstClass(BookingInter booking) {
         super(booking);
     }
 
@@ -15,4 +14,4 @@ public class FirstClass {
         return booking.getDescription() + " + First Class";
     }
 }
-}
+

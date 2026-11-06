@@ -1,13 +1,14 @@
 package Decorator;
 
-public class FlightBooking implements Booking{
-    public double getPrice()
-    {
+public class FlightBooking implements BookingInter {
+
+    @Override
+    public double getPrice() {
         return 150;
     }
 
-    public String getInfo()
-    {
+    @Override
+    public String getDescription() {
         return "Basic flight";
     }
 }

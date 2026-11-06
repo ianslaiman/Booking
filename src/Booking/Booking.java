@@ -1,16 +1,16 @@
 package Booking;
 
-import Profile.Profile;
+import Profile.ProfilePrimary;
 import TicketFolder.Ticket;
 
 public abstract class Booking {
-    protected Profile profile;
+    protected ProfilePrimary profile;
     protected Ticket ticket;
     
     // State Pattern Reference
     private BookingState state;
 
-    public Booking(Profile profile, Ticket ticket) {
+    public Booking(ProfilePrimary profile, Ticket ticket) {
         this.profile = profile;
         this.ticket = ticket;
         // All bookings start as PENDING

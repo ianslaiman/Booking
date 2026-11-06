@@ -1,18 +1,18 @@
 package Decorator;
 
-public class Breakfast {
-    public class Breakfast extends BookingDecorator {
+public class Breakfast extends BookingDecorator {
 
-    public Breakfast(Booking booking) {
+    public Breakfast(BookingInter booking) {
         super(booking);
     }
 
+    @Override
     public double getPrice() {
         return booking.getPrice() + 40;
     }
 
+    @Override
     public String getDescription() {
         return booking.getDescription() + " + Extra breakfast";
     }
-}
 }

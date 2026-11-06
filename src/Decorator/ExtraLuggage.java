@@ -1,9 +1,8 @@
 package Decorator;
 
-public class ExtraLuggage {
-    public class ExtraLuggage extends BookingDecorator {
+public class ExtraLuggage extends BookingDecorator {
 
-    public ExtraLuggage(Booking booking) {
+    public ExtraLuggage(BookingInter booking) {
         super(booking);
     }
 
@@ -15,4 +14,4 @@ public class ExtraLuggage {
         return booking.getDescription() + " + Extra luggage";
     }
 }
-}
+

@@ -1,39 +1,39 @@
 package Profile;
 
 public class ProfileBuilder {
-    private Profile profile;
+    private ProfilePrimary profile;
 
     public ProfileBuilder() {
-        this.profile = Profile.getProfile();
+        this.profile = ProfilePrimary.getProfile();
     }
-    public void setFullName() {
-        profile.setFullName("John Doe");
+    public void setFullName(String name) {
+        profile.setFullName(name);
     }
-    public void setEmail() {
-        profile.setEmail("john.doe@gmail.com");
+    public void setEmail(String email) {
+        profile.setEmail(email);
     }
-    public void setPhoneNumber() {
-        profile.setPhoneNumber("123456789");
+    public void setPhoneNumber(int phoneNumber) {
+        profile.setPhoneNumber(phoneNumber);
     }
-    public void setAddress() {
-        profile.setAddress("CEU San Pablo, Madrid");
+    public void setAddress(String Address) {
+        profile.setAddress(Address);
     }
-    public void setDateOfBirth() {
-        profile.setDateOfBirth("01/01/1990");
+    public void setDateOfBirth(String birth) {
+        profile.setDateOfBirth(birth);
     }
-    public void setGender() {
-        profile.setGender("Male");
+    public void setGender(String gender) {
+        profile.setGender(gender);
     }
-    public void setNationality() {
-        profile.setNationality("Spanish");
+    public void setNationality(String nationality) {
+        profile.setNationality(nationality);
     }
-    public void setPassportNumber() {
-        profile.setPassportNumber("123456789");
+    public void setPassportNumber(String passportNumber) {
+        profile.setPassportNumber(passportNumber);
     }
-    public void setPoints() {
+    public void setPoints(int points) {
         profile.setPoints(0);
     }
-    public Profile getProfile() {
+    public ProfilePrimary getProfile() {
         return profile;
     }
 }

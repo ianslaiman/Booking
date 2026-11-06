@@ -1,9 +1,8 @@
 package Decorator;
 
-public class SpaAccess {
-    public class SpaAccess extends BookingDecorator {
+public class SpaAccess extends BookingDecorator {
 
-    public SpaAccess(Booking booking) {
+    public SpaAccess(BookingInter booking) {
         super(booking);
     }
 
@@ -15,4 +14,4 @@ public class SpaAccess {
         return booking.getDescription() + " + Spa Acess";
     }
 }
-}
+

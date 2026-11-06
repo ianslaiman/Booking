@@ -2,7 +2,7 @@ package UI_Format;
 
 import Facade.BookingFacade;
 import Facade.BookingCoordinator; // <-- Import the coordinator
-import Profile.Profile;
+import Profile.ProfilePrimary;
 
 public class App {
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class App {
 
         // --- STEP 2: MEDIATOR SETUP ---
         // Retrieve and configure the Profile singleton
-        Profile userProfile = Profile.getProfile();
+        ProfilePrimary userProfile = ProfilePrimary.getProfile();
         userProfile.setFullName("John Doe");
 
         // Wire the Mediator

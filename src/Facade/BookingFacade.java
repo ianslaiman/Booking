@@ -38,7 +38,7 @@ public class BookingFacade {
     }
 
     // Facade Operation
-    public void processBooking(Profile profile, String ticketCategory) {
+    public void processBooking(ProfilePrimary profile, String ticketCategory) {
         System.out.println("==========================================");
         System.out.println("       STARTING BOOKING PROCESS           ");
         System.out.println("==========================================");

@@ -5,12 +5,15 @@ import UI_Format.*;
 import TicketFolder.*;
 import TicketPrices.*;
 import Decorator.*;
-
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Ticket> reservations = new ArrayList<>();
         boolean UserOnline = true;
+        boolean ProfileCreated = false;
         while(UserOnline = true){
             System.out.println("Welcome to the Booking System!");
             System.out.println("If new please make a profile!");
@@ -22,7 +25,6 @@ public class Main {
             System.out.println("5. Exit");
             int option = 0;
 
-            boolean ProfileCreated = false;
             ProfileBuilder profile = new ProfileBuilder();
             Scanner scanner = new Scanner(System.in);
             
@@ -31,8 +33,17 @@ public class Main {
             {
                 case 1:
 
-                TransportTicket PlaneTicket = new TransportTicket();
-                int TicketIdentifierTravel = 11593567;
+                if(ProfileCreated == false)
+                {
+                    System.out.println("Please Create a Profile first before continuing");
+                    break;
+                }
+
+                TicketFactory transportTicketFactory = ticketFactory("Transport");
+                Ticket transportTicket = transportTicketFactory.createTicket();
+                TransportTicketBuilder builder = new TransportTicketBuilder();
+
+                int TicketIdentifierTravel = Random8Digit();
                 int TicketPriceTravel = PriceTransport();
                 String TicketBrandTravel = BrandTransport();
                 String TicketDateTravel = Date();
@@ -40,21 +51,51 @@ public class Main {
                 String TicketDestinationTravel = DestinationTransport();
                 String TicketOriginTravel = OriginTransport();
                 String TicketDocumentTravel = PassportNumber;
+                int CreditCard = CreditCard();
+
+                transportTicket = builder.getTicket();
 
                 case 2:
 
+                if(ProfileCreated == false)
+                {
+                    System.out.println("Please Create a Profile first before continuing");
+                    break;
+                }
+
                 HotelTicket HotelTicket = new HotelTicket();
-                int TicketIdentifierHotel = 11593567;
+                int TicketIdentifierHotel = Random8Digit();
                 int TicketPriceHotel = PriceHotel();
                 String TicketBrandHotel = BrandHotel();
                 String TicketDateHotel = Date();
                 String TicketTypeHotel = "Hotel";
                 String TicketDestinationHotel = DestinationHotel();
                 String TicketDocumentHotel = PassportNumber;
+                CreditCard = CreditCard();
 
                 case 3:
 
-
+                if(ProfileCreated == false)
+                {
+                    ProfileBuilder profileBuilder = new ProfileBuilder();
+                    Scanner scan = new Scanner(System.in);
+                    String name = scan.nextLine();
+                    System.out.println("Please enter your full name please.");
+                    profileBuilder.setFullName(name);
+                    String email = scan.nextLine();
+                    System.out.println("Please enter your full email please.");
+                    profileBuilder.setEmail(email);
+                    int phoneNumber = phoneNumber();
+                    profileBuilder.setPhoneNumber();
+                    profileBuilder.setAddress();
+                    profileBuilder.setDateOfBirth();
+                    profileBuilder.setGender();
+                    profileBuilder.setNationality();
+                    profileBuilder.setPassportNumber();
+                    ProfilePrimary profile1 = profileBuilder.getProfile();
+                    System.out.println(profile1.toString());
+                    break;
+                }
 
                 case 4:
                     
@@ -69,29 +110,66 @@ public class Main {
         }
     }
 
+    static int Random8Digit()
+    {
+        Random random = new Random();
+
+        int number = 10000000 + random.nextInt(90000000);
+
+        System.out.println(number);
+        return number;
+    }
+
     static int PriceTransport()
     {
         int price = 0;
+        boolean breaker = false;
+        BookingInter booking = new FlightBooking();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please select your ticket type");
-        System.out.println("1. Standard \n2. Business \n3. First Class \n4. Exit");
+        System.out.println("1. Standard \n2. Business \n3. First Class");
         int option = scanner.nextInt();
 
-        switch(option)
-        {
-            case 1:
-                price = 125;
-                break;
-            case 2:
-                price = 175;
-                break;
-            case 3:
-                price = 250;
-                break;
-            case 4:
-                break;
-            default:
-                System.out.println("Unknown input");
+        while(breaker == false){
+            switch(option)
+            {
+                case 1:
+                    breaker = true;
+                    break;
+                case 2:
+                    booking = new BusinessClass(booking);
+                    breaker = true;
+                    break;
+                case 3:
+                    booking = new FirstClass(booking);
+                    breaker = true;
+                    break;
+                default:
+                    System.out.println("Unknown input");
+            }
+        }
+
+        breaker = false;
+        System.out.println("What bonuses do you want one your flight");
+        System.out.println("1. Extra Luggage \n2. RentACar \n3. Exit");
+
+        while(breaker == false){
+            System.out.println("What bonuses do you want one your flight");
+            System.out.println("1. Extra Luggage \n2. RentACar \n3. Exit");
+            switch(option)
+            {
+                case 1:
+                    booking = new ExtraLuggage(booking);
+                    break;
+                case 2:
+                    booking = new RentACar(booking);
+                    break;
+                case 3:
+                    breaker = true;
+                    break;
+                default:
+                    System.out.println("Unknown input");
+            }
         }
 
         return price;
@@ -137,6 +215,31 @@ public class Main {
     {
         String Destination = "";
         return Destination;
+    }
+
+    static int CreditCard()
+    {
+        int CreditCard = 0;
+        
+        return CreditCard;
+    }
+
+    static int phoneNumber()
+    {
+        int phoneNumber = 0;
+        return phoneNumber;
+    }
+
+    static TicketFactory ticketFactory(String type)
+    {
+        switch (type) {
+            case "Transport":
+                return new TransportTicketFactory();
+            case "Hotel":
+                return new HotelTicketFactory();
+            default:
+                return new HotelTicketFactory();
+            }
     }
 }
 /* 

@@ -11,11 +11,11 @@ public class ProfileDemonstration {
         profileBuilder.setGender();
         profileBuilder.setNationality();
         profileBuilder.setPassportNumber();
-        Profile profile = profileBuilder.getProfile();
+        ProfilePrimary profile = profileBuilder.getProfile();
         System.out.println(profile.toString());
         
         // Singleton Pattern Demonstration
-        Profile profile2 = Profile.getProfile();
+        ProfilePrimary profile2 = ProfilePrimary.getProfile();
         System.out.println(profile2.toString());
     }
 }

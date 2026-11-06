@@ -1,11 +1,11 @@
 package Booking;
 
-import Profile.Profile;
+import Profile.ProfilePrimary;
 import TicketFolder.Ticket;
 
 public class TransportBooking extends Booking {
 
-    public TransportBooking(Profile profile, Ticket ticket) {
+    public TransportBooking(ProfilePrimary profile, Ticket ticket) {
         super(profile, ticket);
     }
 
