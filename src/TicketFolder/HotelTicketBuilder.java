@@ -29,7 +29,7 @@ public class HotelTicketBuilder implements TicketBuilder {
     }
     @Override 
     public void buildTicketDestination(String destination) {
-        ticket.setTicketDestintation(destination);
+        ticket.setTicketDestination(destination);
     }
     @Override 
     public void buildTicketOrigin(String Origin) {
@@ -40,7 +40,7 @@ public class HotelTicketBuilder implements TicketBuilder {
         ticket.setTicketDocumentRequired(document);
     }
     @Override 
-    public void buildCreditCard(int card){
+    public void buildCreditCard(String card){
         ticket.setCreditCard(card);
     }
     @Override 

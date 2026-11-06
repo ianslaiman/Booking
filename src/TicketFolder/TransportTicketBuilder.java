@@ -10,7 +10,7 @@ public class TransportTicketBuilder implements TicketBuilder {
 
     @Override
     public void buildTicketIdentifier(int Identifier) {
-        ticket.setTicketIdentifier(0);
+        ticket.setTicketIdentifier(Identifier);
     }
     @Override
     public void buildTicketPrice(int Price) {
@@ -30,20 +30,21 @@ public class TransportTicketBuilder implements TicketBuilder {
     }
     @Override
     public void buildTicketDestination(String Destination) {
-        ticket.setTicketDestintation("");
+        ticket.setTicketDestination(Destination);
     }
     @Override
     public void buildTicketOrigin(String Origin) {
-        ticket.setTicketOrigin("");
+        ticket.setTicketOrigin(Origin);
     }
     @Override
     public void buildTicketDocumentRequired(String Document) {
         ticket.setTicketDocumentRequired(Document);
     }
     @Override
-    public void buildCreditCard(int Card) {
+    public void buildCreditCard(String Card) {
         ticket.setCreditCard(Card);
     }
+    @Override
     public Ticket getTicket() {
         return ticket;
     }

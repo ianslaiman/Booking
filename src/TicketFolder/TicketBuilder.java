@@ -9,6 +9,6 @@ public interface TicketBuilder {
     void buildTicketDestination(String destination);
     void buildTicketOrigin(String origin);
     void buildTicketDocumentRequired(String document);
-    void buildCreditCard(int card);
+    void buildCreditCard(String card);
     Ticket getTicket();
 }

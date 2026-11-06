@@ -11,6 +11,6 @@ public class LargerRoom extends BookingDecorator {
     }
 
     public String getDescription() {
-        return booking.getDescription() + " + Spa Acess";
+        return booking.getDescription() + " + Larger room";
     }
 }

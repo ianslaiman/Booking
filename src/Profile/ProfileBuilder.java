@@ -12,7 +12,7 @@ public class ProfileBuilder {
     public void setEmail(String email) {
         profile.setEmail(email);
     }
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         profile.setPhoneNumber(phoneNumber);
     }
     public void setAddress(String Address) {
@@ -31,7 +31,7 @@ public class ProfileBuilder {
         profile.setPassportNumber(passportNumber);
     }
     public void setPoints(int points) {
-        profile.setPoints(0);
+        profile.setPoints(points);
     }
     public ProfilePrimary getProfile() {
         return profile;

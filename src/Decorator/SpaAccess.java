@@ -11,7 +11,7 @@ public class SpaAccess extends BookingDecorator {
     }
 
     public String getDescription() {
-        return booking.getDescription() + " + Spa Acess per person";
+        return booking.getDescription() + " + Spa access per person";
     }
 }
 
